@@ -1,0 +1,155 @@
+/* Charitify Theme Responsive Design */
+
+@media (max-width: 1024px) {
+   .skill-content {
+    padding: 29px 20px;
+}
+
+/* ---- Start of max-width 992px CSS ---- */
+@media (max-width: 992px) {
+    .sm-padding{
+        padding: 15px;
+    }
+    ul.nav > li > a {
+        font-size: 10px;
+        padding: 0 5px;
+    }
+    .blog-content p{
+        font-size: 12px;
+    }
+    .blog-items{
+        padding: 0 10px;
+    }
+    .list-items .blog-post .col-md-6:first-child{
+        padding-left: 15px;
+    }
+    .bottom-header .default-btn{
+        display: none;
+    }
+    #mainmenu li{
+        padding-left: 15px;
+    }
+    .hero-content h1{
+        font-size: 36px;
+    }
+    .about-bg {
+        margin-bottom: 30px;
+    }
+    .comments-list .comment-box {
+        width: 80%;
+    }
+    .reply-list .comment-box{
+        width: 80%;
+    }
+    .social-icon li{
+        margin-bottom: 10px;
+    }
+
+}
+/* ---- End of max-width 992px CSS ---- */
+
+
+/* ---- Start of min-width 480px and max-width 768px CSS ---- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+	
+}
+/* ---- End of min-width 480px and max-width 768px CSS ---- */
+
+
+/* ---- Start of max-width 767px CSS ---- */
+@media all and (max-width: 767px) {
+    body, p{
+        font-size: 12px;
+        line-height: 22px;
+    }
+    h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    h2 br,
+    h1 br{
+        display: none;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    p br{
+        display: none;
+    }
+    .hero-section,
+    .page-header.
+    .padding{
+        padding: 60px 0;
+    }
+    .portfolio-section{ padding-top: 0; }
+    .xs-padding{
+    	padding: 15px;
+    }
+    .site-branding {
+        padding: 17px 0;
+    }
+    .js #mainmenu {
+        display:none;
+    }
+    .js .slicknav_menu {
+        display:block;
+    }
+    .main-header .social-icon{
+        display: none;
+    }
+    #scroll-to-top {
+        width: 35px;
+        height: 35px;
+        font-size: 10px;
+        line-height: 35px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+/* ---- End of max-width 767px CSS ---- */
+
+
+/* ---- Start of max-width 580px CSS ---- */
+@media all and (max-width: 580px) {
+    .coment-form .form-group .col-sm-4{
+        margin-bottom: 15px;
+        margin-top: auto;
+    }
+    .comment-form .form-group .col-sm-4:nth-child(1),
+    .comment-form .form-group .col-sm-4:nth-child(2){
+        margin-bottom: 15px;
+    }
+    .slider-text h1{
+        font-size: 16px;
+    }
+    .slider-text p{
+        display: none;
+    }
+    .top-content-wrap ul li{
+        margin-right: 18px;
+    }
+    .reply-list {
+        padding-left: 20px;
+    }
+
+}
+/* ---- End of max-width 580px CSS ---- */
+
+
+/* ---- Start of max-width 420px CSS ---- */
+@media all and (max-width: 420px) {
+    
+}
+/* ---- End of max-width 420px CSS ---- */
+
+
+/* ---- Start of max-width 380px CSS ---- */
+@media all and (max-width: 380px) {
+	.slider_content .btn_group a {
+        margin: 0 10px 10px 0;
+    }
+}
+/* ---- End of max-width 380px CSS ---- */
