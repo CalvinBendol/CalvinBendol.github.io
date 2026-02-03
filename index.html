@@ -1,244 +1,142 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-        <meta name="author" content="TeamXcel">
-       
-        <title>Bendesign | Design Studio</title>
-        
-		<link rel="shortcut icon" type="image/x-icon" href="img/Bendesign v2 no-01.png">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Calvin Bendol</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <!-- Font Awesome Icons CSS -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- Themify Icons CSS -->
-        <link rel="stylesheet" href="css/themify-icons.css">
-        <!-- Elegant Font Icons CSS -->
-        <link rel="stylesheet" href="css/elegant-font-icons.css">
-        <!-- Elegant Line Icons CSS -->
-        <link rel="stylesheet" href="css/elegant-line-icons.css">
-		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- CSS Animation -->
-        <link rel="stylesheet" href="css/animate.min.css">
-		<!-- Venobox CSS -->
-        <link rel="stylesheet" href="css/venobox/venobox.css">
-		<!-- OWL-Carousel CSS -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <!-- Slick Nav CSS -->
-        <link rel="stylesheet" href="css/slicknav.min.css">
-		<!-- Main CSS -->
-        <link rel="stylesheet" href="css/main.css">
-		<!-- Responsive CSS -->
-        <link rel="stylesheet" href="css/responsive.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#1e3a8a',
+                            accent: '#3b82f6',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <div class="site-preloader-wrap">
-            <div class="spinner"></div>
-        </div><!-- Preloader -->
-        
-        <header id="header" class="header-section">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md-4">
-                        <div class="site-branding">
-                            <a href="#"><img src="img/Bende.png" alt="Brand"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-8  text-right">
-                        <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li class="active"> <a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <!-- <li><a href="services.html">Services</a></li> -->
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <!-- <li><a href="blog.html">Blog</a>  -->
-                                <!-- <ul>
-                                   <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul> -->
-                            </li>
-                            <!-- <li> <a href="contact.html">Contact</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header><!-- /Header Section -->
-        
-        <div class="header-height"></div>
-        
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content text-center">
-                    <h1>Kami adalah creative studio yang membangun <br> brand dan pengalaman digital.</h1>
-                </div>
-            </div>
-            <span class="scroll-down"></span>
-        </section><!-- /Hero Section -->
-        
-        <section class="portfolio-section padding">
-            <div class="container">
-               <div class="row">
-                    <ul class="portfolio-filter text-center mb-30">
-                        <li class="active" data-filter="*">Semua</li>
-                        <li data-filter=".sosialmedia">Social Media</li>
-                        <li data-filter=".design">Design</li>
-                        <li data-filter=".logo">Logo</li>
-                        <li data-filter=".poster">Poster</li>
-                    </ul><!-- /.Work filter -->
-                </div>
-                <div class="row portfolio-items">
-                    <div class="col-md-4 col-sm-6 pd-15 single-item sosialmedia design">
-                        <div class="portfolio-box">
-                            <img src="img/PosterMDINAvsCH.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Poster Matchday</a></h3>
-                                    <span>Sosial Media</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-1 -->
-                    <div class="col-md-4 col-sm-6 pd-15 single-item design sosialmedia">
-                        <div class="portfolio-box">
-                            <img src="img/PosterCapli.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Individual Poster</a></h3>
-                                    <span>Design</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-2 -->
-                    <div class="col-md-4 col-sm-6 pd-15 single-item logo marketing">
-                        <div class="portfolio-box">
-                            <img src="img/LogoHutSPENSALU-0.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Logo HUT</a></h3>
-                                    <span>Logo Design</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-3 -->
-                    <div class="col-md-4 col-sm-6 pd-15 single-item design poster">
-                        <div class="portfolio-box">
-                            <img src="img/PosterFilmVTSRevisi2x-mi.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Poster VTS Official</a></h3>
-                                    <span>Poster</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-4 -->
-                    <div class="col-md-4 col-sm-6 pd-15 single-item design sosialmedia">
-                        <div class="portfolio-box">
-                            <img src="img/PosterMobi.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Poster Mobil</a></h3>
-                                    <span>Design</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-5 -->
-                    <div class="col-md-4 col-sm-6 pd-15 single-item logo design">
-                        <div class="portfolio-box">
-                            <img src="img/LogoAngkatanNoBG-0.jpeg" alt="img">
-                            <div class="portfolio-inner">
-                                <div class="portfolio-content">
-                                    <h3><a href="#1">Logo Angkatan</a></h3>
-                                    <span>Logo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /Portfolio-6 -->
-                </div>
-                <div class="load-more-btn text-center mt-30">
-                    <a href="portfolio.html" class="default-btn">Lihat Proyek Lainnya</a>
-                </div>
-            </div>
-        </section><!-- /Portfolio Section -->
+    <style>
+        /* Animasi halu pada background */
+        .bg-gradient-animate {
+            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #dbeafe, #f8fafc);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
 
-        <section class="footer-widget-section padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="footer-widget">
-                            <h2 class="text-white">Bendesign.id</h2>
-                            <div class="sep"></div>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi velit, cursus quis nibh facilisis, lacinia aliquet nisi. Donec at est mauris. Maecenas consectetur.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="footer-widget">
-                            <ul class="address">
-                                <li><i class="fa fa-phone" style="color: #ffffff;"></i> <a href="#">+6289 515 784 051</a></li>
-                                <li><i class="fa fa-envelope-o" style="color: #ffffff;"></i> <a href="bendesign.id@gmail.com">bendesign.id@gmail.com</a></li>
-                                <li><i class="fa fa-map-marker" style="color: #ffffff;"></i> -</li>
-                            </ul>
-                            <ul class="social-icon">
-                                <!-- <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li> -->
-                                <li class="instagram"><a href="https://instagram.com/bendesign.id"><i class="fa fa-instagram"></i></a></li>
-                                <li class="instagram"><a href="https://instagram.com/calvinbendol"><i class="fa fa-instagram"></i></a></li>
-                                <!-- <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li class="dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 xs-padding">
-                        <div class="footer-widget">
-                            <h2 class="text-white">About me.</h2>
-                            <div class="sep"></div>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi velit, cursus quis nibh facilisis, lacinia aliquet nisi. Donec at est mauris. Maecenas consectetur.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- /.footer-widget-section -->
-        
-        <footer class="copyright-text text-center">
-            <div class="container">
-                <p>&copy; 2025 Bendesign by Calvinbendol</p>
-            </div>
-        </footer><!-- /.copyright-text -->
-        
-		<a data-scroll href="#header" id="scroll-to-top"><i class="arrow_up"></i></a>
-	
-		<!-- jQuery Lib -->
-		<script src="js/vendor/jquery-1.12.4.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="js/vendor/bootstrap.min.js"></script>
-		<!-- Tether JS -->
-		<script src="js/vendor/tether.min.js"></script>
-        <!-- Imagesloaded JS -->
-        <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
-		<!-- OWL-Carousel JS -->
-		<script src="js/vendor/owl.carousel.min.js"></script>
-		<!-- isotope JS -->
-		<script src="js/vendor/jquery.isotope.v3.0.2.js"></script>
-		<!-- Smooth Scroll JS -->
-		<script src="js/vendor/smooth-scroll.min.js"></script>
-		<!-- venobox JS -->
-		<script src="js/vendor/venobox.min.js"></script>
-        <!-- Slick Nav JS -->
-        <script src="js/vendor/jquery.slicknav.min.js"></script>
-        <!-- Wow JS -->
-		<script src="js/vendor/wow.min.js"></script>
-		<!-- Contact JS -->
-		<script src="js/contact.js"></script>
-		<!-- Main JS -->
-		<script src="js/main.js"></script>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    </body>
+        .link-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-gradient-animate min-h-screen flex justify-center py-12 px-6">
+
+    <div class="max-w-md w-full text-center">
+        <div data-aos="zoom-in" data-aos-duration="800">
+            <div class="relative w-24 h-24 mx-auto mb-4">
+                <img src="img/calvin.jpg" 
+                     alt="Profile" 
+                     class="rounded-full border-4 border-white shadow-xl object-cover w-full h-full">
+                <div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+            </div>
+            <h1 class="text-2xl font-bold text-brand-dark">Calvin Bendol</h1>
+            <p class="text-slate-500 text-sm mb-8 font-medium">Visual Designer & Content Creator</p>
+        </div>
+
+        <div class="space-y-4">
+            
+            <a href="port.html" 
+               data-aos="fade-up" data-aos-delay="100"
+               class="link-card flex items-center p-4 bg-brand-primary text-white rounded-2xl shadow-lg shadow-blue-900/20 group">
+                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <span class="flex-grow font-semibold">Main Portfolio Website</span>
+                <i class="fa-solid fa-chevron-right text-sm opacity-50 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="https://instagram.com/calvibendol" 
+               data-aos="fade-up" data-aos-delay="200"
+               class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
+                <div class="w-10 h-10 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center text-lg">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <span class="flex-grow font-semibold">Follow my Instagram</span>
+                <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="#" 
+               data-aos="fade-up" data-aos-delay="300"
+               class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
+                <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-lg">
+                    <i class="fa-brands fa-dribbble"></i>
+                </div>
+                <span class="flex-grow font-semibold">Design Exploration</span>
+                <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="https://wa.me/6289515784051" 
+               data-aos="fade-up" data-aos-delay="400"
+               class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
+                <div class="w-10 h-10 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-lg">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <span class="flex-grow font-semibold">Chat for Collaboration</span>
+                <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
+            </a>
+
+            <a href="portfolio.pdf" download
+               data-aos="fade-up" data-aos-delay="500"
+               class="link-card flex items-center p-4 bg-brand-dark text-white rounded-2xl shadow-lg group mt-8">
+                <div class="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div class="flex-grow text-left ml-4">
+                    <p class="font-bold text-sm leading-none">Download Resume</p>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">PDF Format • 5MB</p>
+                </div>
+                <i class="fa-solid fa-download text-sm opacity-50"></i>
+            </a>
+
+        </div>
+
+        <div class="mt-16" data-aos="fade-in" data-aos-delay="800">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">
+                &copy; 2026 Calvin Bendol Design
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
 </html>
