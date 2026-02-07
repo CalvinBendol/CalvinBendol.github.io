@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main # atau master, sesuaikan dengan branch GitHub-mu
+
+media_folder: "img"
+public_folder: "img"
+
+collections:
+  - name: "website_content"
+    label: "Edit Portofolio"
+    delete: false # Agar file data.json tidak terhapus sengaja
+    editor:
+      preview: false
+    files:
+      - name: "content_data"
+        label: "Isi Konten Utama"
+        file: "content/data.json"
+        fields:
+          - { label: "Nama Hero", name: "hero_name", widget: "string" }
+          - { label: "Deskripsi Hero", name: "hero_desc", widget: "text" }
+          - { label: "Foto Profil Utama", name: "hero_img", widget: "image" }
+
+          - label: "Koleksi Karya (Portfolio)"
+            name: "works"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Judul Karya", name: "title", widget: "string" }
+              - { label: "Kategori", name: "category", widget: "string" }
+              - { label: "Upload Gambar", name: "image", widget: "image" }

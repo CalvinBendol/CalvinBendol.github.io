@@ -1,26 +1,31 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Links | Calvin Bendol</title>
+    <title>Calvin Bendol | Design Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: { sans: ['"Plus Jakarta Sans"', "sans-serif"] },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
             colors: {
               brand: {
-                dark: "#0f172a",
-                primary: "#1e3a8a",
-                accent: "#3b82f6",
-                light: "#f8fafc",
+                dark: "#0f172a" /* Slate 900 - Biru Sangat Tua */,
+                primary: "#1e3a8a" /* Blue 900 - Biru Tua Elegan */,
+                accent: "#3b82f6" /* Blue 500 - Biru Cerah untuk Highlight */,
+                light: "#f8fafc" /* Slate 50 - Background Terang */,
               },
             },
           },
@@ -29,103 +34,334 @@
     </script>
 
     <style>
-      /* Animasi halu pada background */
-      .bg-gradient-animate {
-        background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #dbeafe, #f8fafc);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+      /* Pinterest Layout Utility */
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 1.5rem;
       }
-
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
+      @media (min-width: 640px) {
+        .masonry-grid {
+          column-count: 2;
         }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
+      }
+      @media (min-width: 1024px) {
+        .masonry-grid {
+          column-count: 3;
         }
       }
 
-      .link-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
       }
 
-      .link-card:hover {
-        transform: scale(1.03);
+      /* Hide scrollbar for cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e3a8a;
+        border-radius: 4px;
       }
     </style>
   </head>
-  <body class="bg-gradient-animate min-h-screen flex justify-center py-12 px-6">
-    <div class="max-w-md w-full text-center">
-      <div data-aos="zoom-in" data-aos-duration="800">
-        <div class="relative w-24 h-24 mx-auto mb-4">
-          <img src="img/calvin.jpg" alt="Profile" class="rounded-full border-4 border-white shadow-xl object-cover w-full h-full" />
-          <div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+  <body class="bg-brand-light text-slate-800 font-sans selection:bg-brand-accent selection:text-white">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-brand-primary tracking-tight"> CalvinBendol<span class="text-brand-accent">.</span> </a>
+
+        <div class="hidden md:flex space-x-8 items-center font-medium text-slate-600">
+          <a href="#home" class="hover:text-brand-primary transition">Home</a>
+          <a href="#about" class="hover:text-brand-primary transition">About</a>
+          <a href="#portfolio" class="hover:text-brand-primary transition">Portfolio</a>
+          <!-- <a href="portfolio.pdf" download class="px-5 py-2 bg-brand-primary text-white rounded-full hover:bg-brand-dark transition shadow-lg shadow-blue-900/20 transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-download mr-2"></i>Download PDF
+          </a> -->
         </div>
-        <h1 class="text-2xl font-bold text-brand-dark">Calvin Bendol</h1>
-        <p class="text-slate-500 text-sm mb-8 font-medium">Visual Designer & Content Creator</p>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-brand-primary focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
 
-      <div class="space-y-4">
-        <a href="portf.html" data-aos="fade-up" data-aos-delay="100" class="link-card flex items-center p-4 bg-brand-primary text-white rounded-2xl shadow-lg shadow-blue-900/20 group">
-          <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-lg">
-            <i class="fa-solid fa-globe"></i>
-          </div>
-          <span class="flex-grow font-semibold">Main Portfolio Website</span>
-          <i class="fa-solid fa-chevron-right text-sm opacity-50 group-hover:translate-x-1 transition"></i>
-        </a>
-
-        <a href="https://instagram.com/calvibendol" data-aos="fade-up" data-aos-delay="200" class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
-          <div class="w-10 h-10 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center text-lg">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-          <span class="flex-grow font-semibold">Follow my Instagram</span>
-          <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
-        </a>
-
-        <a href="#" data-aos="fade-up" data-aos-delay="300" class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
-          <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-lg">
-            <i class="fa-brands fa-dribbble"></i>
-          </div>
-          <span class="flex-grow font-semibold">Design Exploration</span>
-          <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
-        </a>
-
-        <a href="https://wa.me/6289515784051" data-aos="fade-up" data-aos-delay="400" class="link-card flex items-center p-4 bg-white text-brand-dark border border-slate-200 rounded-2xl shadow-sm group">
-          <div class="w-10 h-10 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-lg">
-            <i class="fa-brands fa-whatsapp"></i>
-          </div>
-          <span class="flex-grow font-semibold">Chat for Collaboration</span>
-          <i class="fa-solid fa-chevron-right text-sm text-slate-300 group-hover:translate-x-1 transition"></i>
-        </a>
-
-        <!-- <a href="portfolio.pdf" download data-aos="fade-up" data-aos-delay="500" class="link-card flex items-center p-4 bg-brand-dark text-white rounded-2xl shadow-lg group mt-8">
-          <div class="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-lg">
-            <i class="fa-solid fa-file-pdf"></i>
-          </div>
-          <div class="flex-grow text-left ml-4">
-            <p class="font-bold text-sm leading-none">Download Resume</p>
-            <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">PDF Format • 5MB</p>
-          </div>
-          <i class="fa-solid fa-download text-sm opacity-50"></i>
-        </a> -->
-      </div>
-
-      <div class="mt-16" data-aos="fade-in" data-aos-delay="800">
-        <div class="flex justify-center space-x-6 mb-6">
-          <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-github"></i></a>
-          <a href="#" class="text-slate-400 hover:text-brand-primary transition text-xl"><i class="fa-brands fa-twitter"></i></a>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-medium text-slate-600">
+          <a href="#home" class="hover:text-brand-primary">Home</a>
+          <a href="#about" class="hover:text-brand-primary">About</a>
+          <a href="#portfolio" class="hover:text-brand-primary">Portfolio</a>
+          <a href="portfolio.pdf" download class="text-brand-primary font-bold">Download PDF</a>
         </div>
-        <p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">&copy; 2026 Calvin Bendol Design</p>
       </div>
-    </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+      <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right" data-aos-duration="1000">
+          <p class="text-brand-accent font-semibold mb-2 tracking-wider uppercase text-sm">Design Portfolio</p>
+          <h1 id="hero-name-target" class="text-5xl md:text-6xl font-bold text-brand-dark leading-tight mb-6">
+            Visual Designer <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent"> & Creative Thinker </span>
+          </h1>
+          <p id="hero-desc-target" class="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">Halo, saya Calvin. Saya menciptakan pengalaman visual yang modern dan fungsional. Tidak bertele-tele, fokus pada hasil dan estetika.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#portfolio" class="px-8 py-3 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-dark transition shadow-lg shadow-blue-900/30 text-center"> Lihat Karya </a>
+            <a href="#contact" class="px-8 py-3 border border-slate-300 text-slate-600 rounded-full font-semibold hover:border-brand-primary hover:text-brand-primary transition text-center"> Kontak Saya </a>
+          </div>
+        </div>
+
+        <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+          <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+            <img id="hero-img-target" src="img/IMG_9939.JPG" alt="Calvin Profile" class="w-full h-auto object-cover" />
+          </div>
+          <div class="absolute inset-0 border-2 border-brand-accent rounded-2xl -rotate-2 transform translate-x-4 translate-y-4 -z-10"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-8 border border-slate-100 rounded-xl hover:shadow-xl transition duration-300 bg-brand-light" data-aos="fade-up" data-aos-delay="0">
+            <div class="w-12 h-12 bg-blue-100 text-brand-primary rounded-lg flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Graphic Design</h3>
+            <p class="text-slate-500">Logo, Branding, dan materi promosi dengan sentuhan modern.</p>
+          </div>
+          <div class="p-8 border border-slate-100 rounded-xl hover:shadow-xl transition duration-300 bg-brand-light" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-12 h-12 bg-blue-100 text-brand-primary rounded-lg flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">UI/UX Design</h3>
+            <p class="text-slate-500">Desain antarmuka website dan aplikasi yang user-friendly.</p>
+          </div>
+          <div class="p-8 border border-slate-100 rounded-xl hover:shadow-xl transition duration-300 bg-brand-light" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-12 h-12 bg-blue-100 text-brand-primary rounded-lg flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-photo-film"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Photography</h3>
+            <p class="text-slate-500">Visual storytelling melalui fotografi yang emosional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Featured Works</h2>
+          <p class="text-slate-500 max-w-2xl mx-auto">Kumpulan karya terbaik saya. Layout bebas, eksploratif, dan tidak kaku.</p>
+        </div>
+
+        <div id="portfolio-target" class="masonry-grid">
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up">
+            <img src="img/PosterMDINAvsCH.jpeg" alt="Poster Matchday" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Matchday</h4>
+              <p class="text-blue-200 text-sm">Sosial Media</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+            <img src="img/PosterCapli.jpeg" alt="Individual Poster" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Individual Poster</h4>
+              <p class="text-blue-200 text-sm">Design</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="200">
+            <img src="img/LogoHutSPENSALU-0.jpeg" alt="Logo HUT" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Logo HUT</h4>
+              <p class="text-blue-200 text-sm">Logo Design</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up">
+            <img src="img/PosterFilmVTSRevisi2x-mi.jpeg" alt="Poster VTS Official" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster VTS Official</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+            <img src="img/PosterMobi.jpeg" alt="Poster Mobil" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Mobil</h4>
+              <p class="text-blue-200 text-sm">Design</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="200">
+            <img src="img/LogoAngkatanNoBG-0.jpeg" alt="Logo Angkatan" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Logo Angkatan</h4>
+              <p class="text-blue-200 text-sm">Logo</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up">
+            <img src="img/PosterHUT1200x1500pxWhite_Ne.jpeg" alt="Poster Lomba" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Lomba</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+            <img src="img/PosterPerumaha.jpeg" alt="Poster Perumahan" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Perumahan</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="200">
+            <img src="img/CURLIN.jpeg" alt="Poster Olahraga" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Olahraga</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up">
+            <img src="img/HappyEidAdh.jpeg" alt="Poster Sosial Media" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Sosial Media</h4>
+              <p class="text-blue-200 text-sm">Poster Sosial Media</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+            <img src="img/HiringCrewVTS.jpeg" alt="Poster Requirement" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Requirement</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="200">
+            <img src="img/PosterAnjayyh.jpeg" alt="Poster Manipulasi" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Poster Manipulasi</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up">
+            <img src="img/DigitalImaging.jpg" alt="Digital Imaging" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">Digital Imaging</h4>
+              <p class="text-blue-200 text-sm">Poster</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="text-center mt-12">
+          <a href="portfolio.pdf" download class="inline-flex items-center text-brand-primary font-bold hover:text-brand-dark transition"> Lihat Portfolio Lengkap (PDF) <i class="fa-solid fa-arrow-right ml-2"></i> </a>
+        </div> -->
+      </div>
+    </section>
+
+    <footer id="contact" class="bg-brand-dark text-white py-16">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <h2 class="text-2xl font-bold mb-2">Calvin Bendol.</h2>
+            <p class="text-slate-400 text-sm">Creating digital experiences that matter.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="instagram.com/calvinbendol" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent transition text-white">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="www.linkedin.com/in/calvinbendol" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent transition text-white">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="wa.me/6289515784051" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent transition text-white">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="calvinbendol@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent transition text-white">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <hr class="border-slate-800 my-8" />
+        <div class="text-center text-slate-500 text-sm">&copy; 2024 Calvin Bendol. All rights reserved.</div>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({ duration: 1000, once: true });
+      // Initialize Animations
+      AOS.init({
+        once: true, // Animasi hanya sekali saat scroll
+        offset: 100,
+      });
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const icon = menuBtn.querySelector("i");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        // Ganti icon burger ke silang
+        if (mobileMenu.classList.contains("hidden")) {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        } else {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        }
+      });
+
+      // Fungsi memuat data dari CMS
+      async function loadCMSData() {
+        try {
+          const response = await fetch("content/data.json");
+          const data = await response.json();
+
+          // Isi Teks & Gambar Hero
+          document.getElementById("hero-name-target").innerText = data.hero_name;
+          document.getElementById("hero-desc-target").innerText = data.hero_desc;
+          document.getElementById("hero-img-target").src = data.hero_img;
+
+          // Render Portfolio
+          const container = document.getElementById("portfolio-target");
+          container.innerHTML = ""; // bersihkan
+
+          data.works.forEach((item, index) => {
+            const delay = (index % 3) * 100; // auto delay AOS
+            container.innerHTML += `
+          <div class="masonry-item group relative overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="${delay}">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-auto transform group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center flex-col text-center p-4">
+              <h4 class="text-white font-bold text-lg">${item.title}</h4>
+              <p class="text-blue-200 text-sm">${item.category}</p>
+            </div>
+          </div>
+        `;
+          });
+
+          // Refresh AOS agar mengenali elemen baru
+          AOS.refresh();
+        } catch (err) {
+          console.error("Gagal memuat data CMS:", err);
+        }
+      }
+
+      // Jalankan saat web dibuka
+      document.addEventListener("DOMContentLoaded", loadCMSData);
     </script>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </body>
 </html>

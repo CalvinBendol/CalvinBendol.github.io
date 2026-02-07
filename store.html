@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store | Calvin Bendol</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: {
+              brand: {
+                dark: "#0f172a",
+                primary: "#1e3a8a",
+                accent: "#3b82f6",
+                light: "#f8fafc",
+                success: "#10b981",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-brand-light text-slate-800 font-sans">
+    <nav class="fixed w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-brand-primary tracking-tight"> Calvin<span class="text-brand-accent">.</span> Store </a>
+        <div class="flex items-center space-x-6">
+          <a href="index.html" class="text-slate-600 hover:text-brand-primary font-medium transition">Back to Portfolio</a>
+          <div class="relative">
+            <i class="fa-solid fa-cart-shopping text-brand-primary text-xl"></i>
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-32 pb-12 text-center container mx-auto px-6">
+      <div data-aos="fade-down">
+        <span class="bg-blue-100 text-brand-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Premium Assets</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mt-4 mb-4">Digital Design Shop</h1>
+        <p class="text-slate-500 max-w-xl mx-auto">Tingkatkan kualitas desainmu dengan aset premium buatan saya. Pembayaran mudah, download instan via email.</p>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition duration-300 flex flex-col" data-aos="fade-up">
+            <div class="relative h-64 overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-brand-dark text-white text-xs font-bold px-3 py-1 rounded-md">PSD Mockup</span>
+              <img src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-brand-dark mb-2">Modern iPhone 15 Mockup Kit</h3>
+              <p class="text-slate-500 text-sm mb-4 flex-grow">Koleksi 10 scene mockup iPhone kualitas tinggi (4K). Mudah diedit dengan Smart Object.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                <span class="text-2xl font-bold text-brand-primary">Rp 99.000</span>
+                <button onclick="openCheckout('Modern iPhone 15 Mockup Kit', '99.000')" class="px-6 py-2 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-accent transition shadow-lg shadow-blue-500/30">
+                  Beli Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-64 overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-md">Lightroom Preset</span>
+              <img src="https://images.unsplash.com/photo-1519681393798-3828fb4090bb?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-brand-dark mb-2">Cinematic Dark Blue Presets</h3>
+              <p class="text-slate-500 text-sm mb-4 flex-grow">Pack berisi 15 preset Lightroom untuk memberikan nuansa biru gelap dan moody pada fotomu.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                <span class="text-2xl font-bold text-brand-primary">Rp 49.000</span>
+                <button onclick="openCheckout('Cinematic Dark Blue Presets', '49.000')" class="px-6 py-2 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-accent transition shadow-lg shadow-blue-500/30">
+                  Beli Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition duration-300 flex flex-col" data-aos="fade-up">
+            <div class="relative h-64 overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-md">Icon Pack</span>
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-brand-dark mb-2">3D Abstract Shapes Bundle</h3>
+              <p class="text-slate-500 text-sm mb-4 flex-grow">100+ Elemen 3D abstract render transparan (PNG) untuk kebutuhan desain poster futuristik.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                <span class="text-2xl font-bold text-brand-primary">Rp 75.000</span>
+                <button onclick="openCheckout('3D Abstract Shapes Bundle', '75.000')" class="px-6 py-2 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-accent transition shadow-lg shadow-blue-500/30">
+                  Beli Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-64 overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-md">E-Book</span>
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-brand-dark mb-2">Freelance Designer Guide</h3>
+              <p class="text-slate-500 text-sm mb-4 flex-grow">Panduan lengkap (PDF) cara mendapatkan klien pertama, mengatur pricing, dan kontrak kerja.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                <span class="text-2xl font-bold text-brand-primary">Rp 120.000</span>
+                <button onclick="openCheckout('Freelance Designer Guide', '120.000')" class="px-6 py-2 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-accent transition shadow-lg shadow-blue-500/30">
+                  Beli Sekarang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden">
+      <div class="absolute inset-0 bg-brand-dark/60 backdrop-blur-sm transition-opacity" onclick="closeCheckout()"></div>
+
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden scale-95 transition-transform duration-300" id="modal-panel">
+        <div class="bg-brand-light px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+          <h3 class="font-bold text-brand-dark flex items-center gap-2"><i class="fa-solid fa-lock text-brand-primary"></i> Secure Checkout</h3>
+          <button onclick="closeCheckout()" class="text-slate-400 hover:text-red-500 transition"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-center gap-4 mb-6 bg-blue-50 p-4 rounded-xl border border-blue-100">
+            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-brand-primary text-xl shadow-sm">
+              <i class="fa-solid fa-file-zipper"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 uppercase font-bold">Item to Buy</p>
+              <h4 id="checkout-product-name" class="font-bold text-brand-dark leading-tight">Product Name</h4>
+            </div>
+            <div class="ml-auto">
+              <span id="checkout-price" class="text-brand-primary font-bold">Rp 0</span>
+            </div>
+          </div>
+
+          <form id="payment-form" onsubmit="processPayment(event)">
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+                <p class="text-[11px] text-slate-400 mb-2">File produk akan dikirim otomatis ke email ini.</p>
+                <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">Payment Method</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="cursor-pointer border border-slate-200 rounded-lg p-3 hover:border-brand-primary hover:bg-blue-50 transition flex items-center gap-2 relative">
+                    <input type="radio" name="payment" class="accent-brand-primary" checked />
+                    <i class="fa-solid fa-qrcode text-slate-600"></i>
+                    <span class="text-sm font-medium">QRIS (GoPay/Ovo)</span>
+                  </label>
+                  <label class="cursor-pointer border border-slate-200 rounded-lg p-3 hover:border-brand-primary hover:bg-blue-50 transition flex items-center gap-2">
+                    <input type="radio" name="payment" class="accent-brand-primary" />
+                    <i class="fa-solid fa-building-columns text-slate-600"></i>
+                    <span class="text-sm font-medium">Bank Transfer</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-100">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-slate-500">Total Payment</span>
+                <span id="checkout-total" class="text-xl font-bold text-brand-dark">Rp 0</span>
+              </div>
+              <button type="submit" class="w-full bg-brand-primary text-white py-3.5 rounded-xl font-bold hover:bg-brand-dark transition shadow-lg shadow-blue-900/20 flex justify-center items-center gap-2 group">
+                <span>Bayar & Download</span>
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+              </button>
+            </div>
+          </form>
+
+          <div id="success-state" class="hidden text-center py-8">
+            <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 animate-bounce">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-dark mb-2">Pembayaran Berhasil!</h3>
+            <p class="text-slate-500 mb-6">Terima kasih. Link download produk telah dikirim ke email kamu.</p>
+            <button onclick="closeCheckout()" class="text-brand-primary font-bold hover:underline">Tutup Jendela</button>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 px-6 py-3 text-center text-[10px] text-slate-400 font-medium border-t border-gray-100"><i class="fa-solid fa-shield-halved mr-1"></i> Secured by 256-bit SSL Encryption</div>
+      </div>
+    </div>
+
+    <footer class="bg-brand-dark text-white py-8 text-center text-sm">
+      <p>&copy; 2024 Calvin Bendol Store. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, offset: 50 });
+
+      // Logic Modal Checkout
+      const modal = document.getElementById("checkout-modal");
+      const modalPanel = document.getElementById("modal-panel");
+      const productNameEl = document.getElementById("checkout-product-name");
+      const priceEl = document.getElementById("checkout-price");
+      const totalEl = document.getElementById("checkout-total");
+      const form = document.getElementById("payment-form");
+      const successState = document.getElementById("success-state");
+
+      function openCheckout(name, price) {
+        // Set Data
+        productNameEl.innerText = name;
+        priceEl.innerText = "Rp " + price;
+        totalEl.innerText = "Rp " + price;
+
+        // Reset Form State
+        form.classList.remove("hidden");
+        successState.classList.add("hidden");
+        form.reset();
+
+        // Show Modal
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          modalPanel.classList.remove("scale-95");
+          modalPanel.classList.add("scale-100");
+        }, 10);
+      }
+
+      function closeCheckout() {
+        modalPanel.classList.remove("scale-100");
+        modalPanel.classList.add("scale-95");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 200);
+      }
+
+      // Simulasi Proses Pembayaran
+      function processPayment(e) {
+        e.preventDefault();
+        // Ganti text tombol loading
+        const btn = form.querySelector("button");
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+
+        // Simulasi loading 2 detik
+        setTimeout(() => {
+          form.classList.add("hidden");
+          successState.classList.remove("hidden");
+          btn.innerHTML = originalContent;
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
