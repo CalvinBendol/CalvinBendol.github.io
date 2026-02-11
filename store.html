@@ -244,30 +244,36 @@
       }
 
       function processPayment(e) {
-        e.preventDefault();
+  e.preventDefault();
 
-        const btn = form.querySelector("button");
-        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengalihkan ke Pembayaran...';
-        btn.disabled = true;
+  const btn = form.querySelector("button");
+  const emailInput = form.querySelector('input[type="email"]').value; // Ambil email user
+  const productName = productNameEl.innerText; // Ambil nama produk
 
-        // 1. Ambil data dari UI
-        const productPrice = priceEl.innerText.replace(/\D/g, ""); // Ambil angka saja (misal: 99000)
-        const orderId = "INV" + Date.now(); // Generate ID unik
+  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengalihkan ke Pembayaran...';
+  btn.disabled = true;
 
-        // 2. DATA PENTING (Ganti 'slug-kamu' dengan slug proyek di dashboard Pakasir)
-        const slug = "calvinbendol";
-        const amount = productPrice;
-        const redirectUrl = window.location.href; // Balik ke halaman ini setelah bayar
+  // 1. Bersihkan harga (Ambil angka saja)
+  const amount = priceEl.innerText.replace(/\D/g, ""); 
+  
+  // 2. KUNCI UTAMA: Masukkan Nama Produk & Email ke Order ID
+  // Format: NamaProduk__EmailUser__Timestamp
+  // Contoh: Modern_iPhone_15_Mockup_Kit__user[at]gmail.com__1712345678
+  const safeProductName = productName.replace(/\s/g, "_");
+  const safeEmail = emailInput.replace("@", "[at]");
+  const orderId = `${safeProductName}__${safeEmail}__${Date.now()}`;
 
-        // 3. Susun URL sesuai Panduan Pakasir Bagian B & B.1
-        // Format: https://app.pakasir.com/pay/{slug}/{amount}?order_id={order_id}&redirect={url}
-        const paymentUrl = `https://app.pakasir.com/pay/${slug}/${amount}?order_id=${orderId}&redirect=${encodeURIComponent(redirectUrl)}`;
+  // 3. Konfigurasi Pakasir
+  const slug = "calvinbendol"; 
+  const redirectUrl = window.location.href;
 
-        // 4. Langsung alihkan user ke halaman pembayaran Pakasir
-        setTimeout(() => {
-          window.location.href = paymentUrl;
-        }, 500);
-      }
+  // 4. Redirect ke Pakasir
+  const paymentUrl = `https://app.pakasir.com/pay/${slug}/${amount}?order_id=${orderId}&redirect=${encodeURIComponent(redirectUrl)}`;
+
+  setTimeout(() => {
+    window.location.href = paymentUrl;
+  }, 800);
+}
     </script>
   </body>
 </html>
