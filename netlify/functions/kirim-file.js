@@ -19,7 +19,7 @@ exports.handler = async (event) => {
       service: 'gmail',
       auth: {
         user: 'calvinbendol@gmail.com', // Ganti emailmu
-        pass: 'dbkv brqk dsql nrkf'  // Ganti pakai APP PASSWORD (16 Digit)
+        pass: 'dbkvbrqkdsqlnrkf'  // Ganti pakai APP PASSWORD (16 Digit)
       }
     });
 
@@ -31,7 +31,7 @@ exports.handler = async (event) => {
     if (productName.includes("Freelance")) fileLink = "https://link-google-drive-ebook";
 
     const mailOptions = {
-      from: '"Calvin Bendol Store" <EMAIL_KAMU@gmail.com>',
+      from: '"Calvin Bendol Store" <calvinbendol@gmail.com>',
       to: userEmail,
       subject: `Lunas! Download ${productName}`,
       html: `
