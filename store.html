@@ -156,7 +156,7 @@
                 <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition" />
               </div>
 
-              <div>
+              <!-- <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Payment Method</label>
                 <div class="grid grid-cols-2 gap-3">
                   <label class="cursor-pointer border border-slate-200 rounded-lg p-3 hover:border-brand-primary hover:bg-blue-50 transition flex items-center gap-2 relative">
@@ -170,7 +170,7 @@
                     <span class="text-sm font-medium">Bank Transfer</span>
                   </label>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="mt-8 pt-4 border-t border-slate-100">
@@ -243,60 +243,30 @@
         }, 200);
       }
 
-      // Ganti fungsi simulasi lama dengan ini
-      async function processPayment(e) {
+      function processPayment(e) {
         e.preventDefault();
 
         const btn = form.querySelector("button");
-        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengalihkan ke Pembayaran...';
+        btn.disabled = true;
 
-        // 1. Ubah tombol jadi loading
-        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Connecting to Pakasir...';
-        btn.disabled = true; // Biar user gak klik berkali-kali
+        // 1. Ambil data dari UI
+        const productPrice = priceEl.innerText.replace(/\D/g, ""); // Ambil angka saja (misal: 99000)
+        const orderId = "INV" + Date.now(); // Generate ID unik
 
-        // 2. Ambil data dari form & modal
-        const buyerEmail = form.querySelector('input[type="email"]').value;
-        const productName = productNameEl.innerText;
-        const productPrice = priceEl.innerText.replace(/\D/g, ""); // Ngambil angka aja dari "Rp 99.000"
+        // 2. DATA PENTING (Ganti 'slug-kamu' dengan slug proyek di dashboard Pakasir)
+        const slug = "calvinbendol";
+        const amount = productPrice;
+        const redirectUrl = window.location.href; // Balik ke halaman ini setelah bayar
 
-        // 3. Siapkan Data untuk API Pakasir
-        const payload = {
-          apiKey: "QlaFxDRfWRaR7J5xzI0btinFfdvOiTpv", // <--- GANTI DENGAN API KEY ASLI
-          productName: productName,
-          price: parseInt(productPrice),
-          email: buyerEmail,
-          reference: "INV-" + Date.now(), // Generate ID transaksi unik
-          callbackUrl: window.location.href, // Ke mana user balik setelah bayar
-        };
+        // 3. Susun URL sesuai Panduan Pakasir Bagian B & B.1
+        // Format: https://app.pakasir.com/pay/{slug}/{amount}?order_id={order_id}&redirect={url}
+        const paymentUrl = `https://app.pakasir.com/pay/${slug}/${amount}?order_id=${orderId}&redirect=${encodeURIComponent(redirectUrl)}`;
 
-        try {
-          // 4. Panggil API Pakasir
-          const response = await fetch("https://api.pakasir.com/v1/transaction/create", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          const result = await response.json();
-
-          if (result.status === "success" || result.checkout_url) {
-            // 5. Redirect ke halaman pembayaran Pakasir
-            window.location.href = result.checkout_url;
-          } else {
-            // Jika error dari API
-            alert("Gagal membuat tagihan: " + (result.message || "Unknown error"));
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-          }
-        } catch (error) {
-          // 6. Jika error koneksi
-          console.error("Error Pakasir:", error);
-          alert("Terjadi kesalahan koneksi ke payment gateway.");
-          btn.innerHTML = originalContent;
-          btn.disabled = false;
-        }
+        // 4. Langsung alihkan user ke halaman pembayaran Pakasir
+        setTimeout(() => {
+          window.location.href = paymentUrl;
+        }, 500);
       }
     </script>
   </body>
