@@ -204,76 +204,117 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ once: true, offset: 50 });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-      // Logic Modal Checkout
-      const modal = document.getElementById("checkout-modal");
-      const modalPanel = document.getElementById("modal-panel");
-      const productNameEl = document.getElementById("checkout-product-name");
-      const priceEl = document.getElementById("checkout-price");
-      const totalEl = document.getElementById("checkout-total");
-      const form = document.getElementById("payment-form");
-      const successState = document.getElementById("success-state");
+<script>
+AOS.init({ once: true, offset: 50 });
 
-      function openCheckout(name, price) {
-        // Set Data
-        productNameEl.innerText = name;
-        priceEl.innerText = "Rp " + price;
-        totalEl.innerText = "Rp " + price;
+// Elements
+const modal = document.getElementById("checkout-modal");
+const modalPanel = document.getElementById("modal-panel");
+const productNameEl = document.getElementById("checkout-product-name");
+const priceEl = document.getElementById("checkout-price");
+const totalEl = document.getElementById("checkout-total");
+const form = document.getElementById("payment-form");
+const successState = document.getElementById("success-state");
 
-        // Reset Form State
-        form.classList.remove("hidden");
-        successState.classList.add("hidden");
-        form.reset();
+// Open modal
+function openCheckout(name, price) {
+  productNameEl.innerText = name;
+  priceEl.innerText = "Rp " + price;
+  totalEl.innerText = "Rp " + price;
 
-        // Show Modal
-        modal.classList.remove("hidden");
-        setTimeout(() => {
-          modalPanel.classList.remove("scale-95");
-          modalPanel.classList.add("scale-100");
-        }, 10);
-      }
+  form.classList.remove("hidden");
+  successState.classList.add("hidden");
+  form.reset();
 
-      function closeCheckout() {
-        modalPanel.classList.remove("scale-100");
-        modalPanel.classList.add("scale-95");
-        setTimeout(() => {
-          modal.classList.add("hidden");
-        }, 200);
-      }
+  // Reset QR
+  const paymentResult = document.getElementById("payment-result");
+if (paymentResult) paymentResult.classList.add("hidden");
+  const qr = document.getElementById("qrcode");
+if (qr) qr.innerHTML = "";
 
-      function processPayment(e) {
+  modal.classList.remove("hidden");
+  setTimeout(() => {
+    modalPanel.classList.remove("scale-95");
+    modalPanel.classList.add("scale-100");
+  }, 10);
+}
+
+// Close modal
+function closeCheckout() {
+  modalPanel.classList.remove("scale-100");
+  modalPanel.classList.add("scale-95");
+  setTimeout(() => {
+    modal.classList.add("hidden");
+  }, 200);
+}
+
+// 🔥 MAIN PAYMENT FUNCTION (UPDATED)
+async function processPayment(e) {
   e.preventDefault();
 
   const btn = form.querySelector("button");
-  const emailInput = form.querySelector('input[type="email"]').value; // Ambil email user
-  const productName = productNameEl.innerText; // Ambil nama produk
+  const email = form.querySelector('input[type="email"]').value;
+  const productName = productNameEl.innerText;
 
-  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengalihkan ke Pembayaran...';
+  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Membuat pembayaran...';
   btn.disabled = true;
 
-  // 1. Bersihkan harga (Ambil angka saja)
-  const amount = priceEl.innerText.replace(/\D/g, ""); 
-  
-  // 2. KUNCI UTAMA: Masukkan Nama Produk & Email ke Order ID
-  // Format: NamaProduk__EmailUser__Timestamp
-  // Contoh: Modern_iPhone_15_Mockup_Kit__user[at]gmail.com__1712345678
-  const safeProductName = productName.replace(/\s/g, "_");
-  const safeEmail = emailInput.replace("@", "[at]");
-  const orderId = `${safeProductName}__${safeEmail}__${Date.now()}`;
+  const amount = parseInt(priceEl.innerText.replace(/\D/g, ""));
+  const safeProduct = productName.replace(/\s/g, "_");
+const safeEmail = email.replace("@", "[at]");
 
-  // 3. Konfigurasi Pakasir
-  const slug = "calvinbendol"; 
-  const redirectUrl = window.location.href;
+const order_id = `${safeProduct}__${safeEmail}__${Date.now()}`;
 
-  // 4. Redirect ke Pakasir
-  const paymentUrl = `https://app.pakasir.com/pay/${slug}/${amount}?order_id=${orderId}&redirect=${encodeURIComponent(redirectUrl)}`;
+  try {
+    const res = await fetch("/.netlify/functions/create-payment", {
+      method: "POST",
+      body: JSON.stringify({
+        order_id,
+        amount,
+        email,
+        productName
+      }),
+    });
 
-  setTimeout(() => {
-    window.location.href = paymentUrl;
-  }, 800);
+    const data = await res.json();
+
+    if (!data || !data.payment) {
+      throw new Error("Response tidak valid");
+    }
+
+    // Hide form
+    form.classList.add("hidden");
+
+    // Show QR
+    const container = document.createElement("div");
+    container.id = "payment-result";
+    container.className = "mt-6 text-center";
+
+    container.innerHTML = `
+      <p class="text-sm text-slate-500 mb-2">Scan QR untuk bayar</p>
+      <div id="qrcode" class="flex justify-center mb-4"></div>
+      <p class="font-bold text-brand-primary">Total: Rp ${amount.toLocaleString()}</p>
+      <p class="text-xs text-slate-400 mt-2">Menunggu pembayaran...</p>
+    `;
+
+    form.parentNode.appendChild(container);
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: data.payment.payment_number,
+      width: 200,
+      height: 200,
+    });
+
+  } catch (err) {
+    console.error(err);
+    alert("Gagal membuat pembayaran. Cek console.");
+  }
+
+  btn.innerHTML = "Bayar & Download";
+  btn.disabled = false;
 }
-    </script>
+</script>
   </body>
 </html>
